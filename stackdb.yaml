@@ -6,9 +6,8 @@ services:
     container_name: postgres
     image: postgres
     restart: always
-    environment:
     ports:
-      - 5432:5432
+      - 11232:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: qwerty
