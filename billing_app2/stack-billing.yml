@@ -8,7 +8,6 @@ services:
     restart: always
     networks:
       - env_prod      
-    environment:
     ports:
       - 5432:5432
     volumes:
@@ -26,7 +25,6 @@ services:
     restart: always
     networks:     
       - env_prep
-    environment:
     ports:
       - 4432:5432
     volumes:
@@ -53,7 +51,7 @@ services:
        - 9090:8080
 
 #ENV_PROD
-#Billin app backend service
+#Billing app backend service
   billingapp-back-prod:
     build:
       context: ./java
@@ -84,7 +82,7 @@ services:
               memory: 250M
 #recusos dedicados, mantiene los recursos disponibles del host para el contenedor
            reservations:
-              cpus: 0.1
+              cpus: "0.1"
               memory: 128M
     #container_name: billingApp-front
     depends_on:     
